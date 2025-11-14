@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O‘zbekiston Respublikasi Universitetlari</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9eff7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #0047ab;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #333;
+            margin: 10px 0 5px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .details {
+            display: none;
+            background: #f9f9f9;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 13px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>O‘zbekiston Respublikasi Universitetlari</h1>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="https://www.texnoman.uz/uploads/blogs/981bc35caa0741d2d58173be7047d02c.jpg" alt="TATU">
+            <h3>Toshkent Axborot Texnologiyalari Universiteti (TATU)</h3>
+            <p>Axborot texnologiyalari va telekommunikatsiya sohasidagi yetakchi oliy ta’lim muassasasi.</p>
+            <button class="btn" onclick="toggleDetails(this)">Batafsil o‘qish</button>
+            <div class="details">
+                TATU 1955-yilda tashkil etilgan. Universitetda kompyuter injiniringi, dasturlash, telekommunikatsiya va axborot xavfsizligi yo‘nalishlari bo‘yicha kadrlar tayyorlanadi.
+                Respublikaning barcha viloyatlarida TATU filiallri mavjud.
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/TDTU.png" alt="TDTU">
+            <h3>Toshkent Davlat Texnika Universiteti (TDTU)</h3>
+            <p>Texnika, energetika va mexanika sohalarida yetakchi oliygoh.</p>
+            <button class="btn" onclick="toggleDetails(this)">Batafsil o‘qish</button>
+            <div class="details">
+                TDTU 1918-yilda tashkil etilgan. Universitetda energetika, mashinasozlik, muhandislik va mexatronika yo‘nalishlari bo‘yicha ta’lim beriladi.
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://avatars.mds.yandex.net/get-altay/235931/2a00000186fe41178d64aa63c665ffb0b5a5/orig" alt="TDIU">
+            <h3>Toshkent Davlat Iqtisodiyot Universiteti (TDIU)</h3>
+            <p>Iqtisodiyot, menejment va moliya sohalarida yetakchi oliygoh.</p>
+            <button class="btn" onclick="toggleDetails(this)">Batafsil o‘qish</button>
+            <div class="details">
+                TDIU 1931-yilda tashkil topgan. Bu universitetda iqtisodiyot, buxgalteriya hisobi, moliya, marketing va xalqaro biznes yo‘nalishlarida mutaxassislar tayyorlanadi.
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://static.abt.uz/crop/600__5d45e3206d1a3.jpg" alt="SamDU">
+            <h3>Samarqand Davlat Universiteti (SamDU)</h3>
+            <p>Markaziy Osiyodagi eng qadimiy universitetlardan biri.</p>
+            <button class="btn" onclick="toggleDetails(this)">Batafsil o‘qish</button>
+            <div class="details">
+                Samarqand Davlat Universiteti 1927-yilda tashkil etilgan. Bu oliygoh tabiiy fanlar, ijtimoiy fanlar, filologiya va pedagogika sohalarida kadrlar tayyorlaydi.
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://tma.uz/wp-content/uploads/2022/09/20220729_173614-2-1024x667.jpg" alt="TMA">
+            <h3>Toshkent Tibbiyot Akademiyasi (TTA)</h3>
+            <p>O‘zbekistonning yetakchi tibbiyot oliygohi.</p>
+            <button class="btn" onclick="toggleDetails(this)">Batafsil o‘qish</button>
+            <div class="details">
+                TTA 2005-yilda tashkil etilgan. Akademiyada shifokorlar, jarrohlar, pediatrlar va boshqa tibbiyot sohasidagi mutaxassislar tayyorlanadi.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleDetails(button) {
+            const details = button.nextElementSibling;
+            const isVisible = details.style.display === 'block';
+            details.style.display = isVisible ? 'none' : 'block';
+            button.textContent = isVisible ? 'Batafsil o‘qish' : 'Yopish';
+        }
+    </script>
+
+</body>
+</html>
