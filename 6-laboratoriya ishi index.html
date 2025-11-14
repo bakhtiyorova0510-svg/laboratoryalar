@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tug‘ilganlik guvohnomasi formasi — Zamonaviy</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      margin: 20px;
+      color: #333;
+    }
+    .wrap {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 25px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    p.intro {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 18px;
+      color: #222;
+    }
+    fieldset {
+      border: 1px solid #ddd;
+      padding: 20px 25px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    legend {
+      font-weight: 700;
+      font-size: 18px;
+      padding: 0 10px;
+      color: #444;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      align-items: center;
+    }
+    .row label {
+      flex: 0 0 140px;
+      margin-right: 15px;
+      font-weight: 600;
+      color: #555;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      flex: 1 1 auto;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #3a86ff;
+      outline: none;
+      box-shadow: 0 0 6px #3a86ff55;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+      max-height: 180px;
+      font-family: inherit;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+    .controls input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .controls label {
+      font-weight: 500;
+      color: #444;
+      cursor: pointer;
+    }
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-start;
+    }
+    button, input[type="reset"] {
+      background-color: #3a86ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 7px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    input[type="reset"] {
+      background-color: #ff595e;
+    }
+    button:hover {
+      background-color: #265ecf;
+    }
+    input[type="reset"]:hover {
+      background-color: #cc494d;
+    }
+    @media (max-width: 480px) {
+      .row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .row label {
+        margin-bottom: 6px;
+        flex: none;
+        width: 100%;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="date"],
+      select,
+      textarea {
+        width: 100%;
+      }
+      .buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="intro">Quyida tug‘ilganlik guvohnomasi ma’lumotlari uchun forma keltirilgan.</p>
+    <form action="#" method="post" novalidate>
+      <!-- Tug‘ilganlik guvohnomasi ma’lumotlari -->
+      <fieldset>
+        <legend>Tug‘ilganlik guvohnomasi ma’lumotlari</legend>
+        <div class="row">
+          <label for="fullName">Ism va familiya:</label>
+          <input id="fullName" name="fullName" type="text" placeholder="Ism va familiya">
+        </div>
+        <div class="row">
+          <label for="birthDate">Tug‘ilgan sana:</label>
+          <input id="birthDate" name="birthDate" type="date">
+        </div>
+        <div class="row">
+          <label for="birthPlace">Tug‘ilgan joy:</label>
+          <input id="birthPlace" name="birthPlace" type="text" placeholder="Shahar / Viloyat">
+        </div>
+        <div class="row">
+          <label for="fatherName">Ota ismi:</label>
+          <input id="fatherName" name="fatherName" type="text" placeholder="Ota ismi">
+        </div>
+        <div class="row">
+          <label for="motherName">Ona ismi:</label>
+          <input id="motherName" name="motherName" type="text" placeholder="Ona ismi">
+        </div>
+      </fieldset>
+      
+      <!-- Murojaat haqida -->
+      <fieldset>
+        <legend>Murojaat haqida</legend>
+        <div class="row">
+          <label for="subject">Mavzu:</label>
+          <select id="subject" name="subject">
+            <option value="">— Tanlang —</option>
+            <option value="savol">Savol</option>
+            <option value="taklif">Taklif</option>
+            <option value="shikoyat">Shikoyat</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="message">Xabar:</label>
+          <textarea id="message" name="message" placeholder="Xabaringizni shu yerga yozing..."></textarea>
+        </div>
+      </fieldset>
+
+      <!-- obuna va tugmalar -->
+      <div class="controls">
+        <input id="subscribe" type="checkbox" name="subscribe">
+        <label for="subscribe">Yangiliklarga obuna bo'lish</label>
+      </div>
+      <div class="buttons">
+        <button type="submit">Yuborish</button>
+        <input type="reset" value="Tozalash">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
