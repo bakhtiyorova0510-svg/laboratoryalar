@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabzavotlar</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #eef2f7;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 30px;
+    }
+    .devices {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      max-height: 160px;
+      object-fit: contain;
+      padding: 10px;
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+    }
+    .card h2 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #003366;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .card button {
+      margin-top: 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .card button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sabzavotlar</h1>
+
+  <div class="devices">
+
+    <div class="card">
+      <img src="https://www.samdu.uz/upload/cover-images/62c864f940698-62c864f94069a-62c864f94069b-62c864f94069c.png" alt="Bodring">
+      <h2>Bodring</h2>
+      <p>Suvga boy, tanani sovituvchi foydali sabzavot.</p>
+      <button onclick="showInfo('bodring')">Batafsil</button>
+    </div>
+
+    <div class="card">
+      <img src="https://api.darakchi.uz/media/news_preview/2024/07/29/-xl_kQTsFyS_Jb1bPzw_UwujuY7_yJ8b4sw_3uiLSmI_WkI7SXb.medium.webp" alt="Pomidor">
+      <h2>Pomidor</h2>
+      <p>Salat va taomlarda keng ishlatiladigan vitaminlarga boy sabzavot.</p>
+      <button onclick="showInfo('pomidor')">Batafsil</button>
+    </div>
+
+    <div class="card">
+      <img src="https://xs.uz/upload/post/2021/11/10/d30fec5c7c15ae1356582506be74de7b1110.jpg" alt="Sabzi">
+      <h2>Sabzi</h2>
+      <p>Ko‘zni mustahkamlovchi A vitamini manbai.</p>
+      <button onclick="showInfo('sabzi')">Batafsil</button>
+    </div>
+
+    <div class="card">
+      <img src="https://www.toshstat.uz/images/com_droppics/358/full/2-bulg.jpg?1678176493453" alt="Bulgar qalampiri">
+      <h2>Bulgar qalampiri</h2>
+      <p>Rangli, shirin mazali va foydali sabzavot.</p>
+      <button onclick="showInfo('qalampir')">Batafsil</button>
+    </div>
+
+    <div class="card">
+      <img src="https://agro-olam.uz/wp-content/uploads/2020/11/162c4289fb4d483679641165a925f689.jpg" alt="Piyoz">
+      <h2>Piyoz</h2>
+      <p>Taomlarga o‘tkir ta’m beruvchi foydali sabzavot.</p>
+      <button onclick="showInfo('piyoz')">Batafsil</button>
+    </div>
+
+  </div>
+
+  <script>
+    const infoData = {
+      bodring: `
+        <h1>Bodring haqida</h1>
+        <p>Bodring — tanani sovituvchi, suvga juda boy sabzavot. U parhez ovqatlarda juda ko‘p uchraydi.</p>
+      `,
+      pomidor: `
+        <h1>Pomidor haqida</h1>
+        <p>Pomidor — C vitamini va antioksidantlarga boy. U salatlarda va ko‘plab taomlarda ishlatiladi.</p>
+      `,
+      sabzi: `
+        <h1>Sabzi haqida</h1>
+        <p>Sabzi — ko‘rish qobiliyatini mustahkamlovchi A vitamini manbai.</p>
+      `,
+      qalampir: `
+        <h1>Bulgar qalampiri haqida</h1>
+        <p>Bulgar qalampiri — rangli, mazali va C vitaminiga boy sabzavot.</p>
+      `,
+      piyoz: `
+        <h1>Piyoz haqida</h1>
+        <p>Piyoz — organizmni mustahkamlovchi tabiiy antibakterial vosita.</p>
+      `
+    };
+
+    function showInfo(key) {
+      const newWin = window.open('', '_blank', 'width=600,height=450,resizable=yes');
+      newWin.document.write(`
+        <!DOCTYPE html>
+        <html lang="uz">
+        <head>
+          <meta charset="UTF-8" />
+          <title>Ma'lumot</title>
+          <style>
+            body { font-family: sans-serif; padding: 20px; color:#333; }
+            button { margin-top: 20px; padding:10px 16px; background:#007bff; color:white; border:none; border-radius:5px; }
+          </style>
+        </head>
+        <body>
+          ${infoData[key]}
+          <button onclick="window.close()">Yopish</button>
+        </body>
+        </html>
+      `);
+      newWin.document.close();
+    }
+  </script>
+
+</body>
+</html>
